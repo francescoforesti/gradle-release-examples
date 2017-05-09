@@ -27,7 +27,11 @@ task(printversion) << {
     println project.version
 }
 
+task(anotherprint) << {
+    println "another print"
+}
+
 beforeReleaseBuild.dependsOn startmessage
-afterReleaseBuild.dependsOn printversion
+afterReleaseBuild.dependsOn printversion anotherprint
 
 wrapper.gradleVersion = '2.10'
